@@ -1,7 +1,7 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
-const Mkdown = require("./generateMarkdown.js");
+const Mkdown = require("./utils/generateMarkdown.js");
 
 // TODO: Create an array of questions for user input
 
@@ -73,7 +73,7 @@ name: 'None',
 }
 ];
 function promptUser(){
-  inquirer.prompt(questions).then((data) => {
+  inquirer.prompt(questions).then((answers) => {
     console.log(JSON.stringify(answers, null, '  '));
 
    });
@@ -109,7 +109,7 @@ init();
     promptUser();
     renderLicenseBadge();
     renderLicenseLink();
-    renderLicenseSection;
+    renderLicenseSection();
     writeToFile();
   }
     
