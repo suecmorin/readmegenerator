@@ -1,6 +1,7 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 function renderLicenseBadge(data) {
+  console.log(data.license, "line4");
   if ((data.license = "None")) {
     return ``;
   } else {
@@ -31,13 +32,17 @@ function renderLicenseLink(data) {
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(data) {
-  if (data.license === null) {
-    return;
-  } else if (data.license === "None") {
-    return "";
-  } else {
-    return `Please refer to license link for exact text of license for your project. `;
-  }
+  if (data.license !== "None") {
+    return `## License
+    This project is licensed under the ${license} license.`;
+      }
+      return '';
+    
+  //} else if (data.license === "None") {
+  //  return "";
+ // } else {
+ //   return `Please refer to license link for exact text of license for your project. `;
+ // }
 }
 
 function generateMarkdown(data) {
