@@ -21,7 +21,7 @@ function renderLicenseLink(data) {
   }
   if (link === "GPL") {
     return `https://www.gnu.org/licenses/gpl-3.0.en.html  Please refer to license link for exact text of license for your project.`;
-  }
+  }gi 
   if (link === "BSD") {
     return `https://opensource.org/licenses/alphabetical  Please refer to license link for exact text of license for your project.`;
   } else {
