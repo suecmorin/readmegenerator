@@ -2,28 +2,28 @@
 // If there is no license, return an empty string
 function renderLicenseBadge(data) {
   console.log(data.license, "line4");
-  if ((data.license = "None")) {
-    return ``;
-  } else {
-    return `![license badge](http://img.shiends.io/badge/license-${data.license}-blue.svg)`;
+ // if ((data.license = "None")) {
+//    return ``;
+ // } else {
+    return `![license badge](http://img.shields.io/badge/license-${data.license}-blue.svg)`;
   }
-}
+
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(data) {
   let link = data.license;
   if (link === "MIT") {
-    return `https://mit-license.org/`;
+    return `https://mit-license.org/  Please refer to license link for exact text of license for your project.`;
   }
   if (link === "Apache") {
-    return `http://www.apache.org/licenses/LICENSE-2.0`;
+    return `http://www.apache.org/licenses/LICENSE-2.0  Please refer to license link for exact text of license for your project.`;
   }
   if (link === "GPL") {
-    return `https://www.gnu.org/licenses/gpl-3.0.en.html`;
+    return `https://www.gnu.org/licenses/gpl-3.0.en.html  Please refer to license link for exact text of license for your project.`;
   }
   if (link === "BSD") {
-    return `https://opensource.org/licenses/alphabetical`;
+    return `https://opensource.org/licenses/alphabetical  Please refer to license link for exact text of license for your project.`;
   } else {
     return "";
   }
@@ -32,17 +32,7 @@ function renderLicenseLink(data) {
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(data) {
-  if (data.license !== "None") {
-    return `## License
-    This project is licensed under the ${license} license.`;
-      }
-      return '';
-    
-  //} else if (data.license === "None") {
-  //  return "";
- // } else {
- //   return `Please refer to license link for exact text of license for your project. `;
- // }
+  
 }
 
 function generateMarkdown(data) {
@@ -62,15 +52,12 @@ function generateMarkdown(data) {
   ${data.usage}
   ## License
   ${renderLicenseBadge(data)}
-  ${renderLicenseLink(data)}
-  ${renderLicenseSection(data)}
+    ${renderLicenseLink(data)}
   ## Contributing
-  ${data.contributing} <br/>
-  ${data.thirdParty}
+  ${data.contributing}
+    ${data.thirdParty}
   ## Contact
-  My name is ${data.username}. My GitHub account is https://github.com/${
-    data.github
-  }.
+  My name is ${data.username}. My GitHub account is https://github.com/${data.github}.
   `;
 }
 

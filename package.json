@@ -15,5 +15,6 @@
     "type": "git",
     "url": "github.com/suecmorin/readmegenerator"
   },
-  "keywords": []
+  "keywords": [],
+  "devDependencies": {}
 }
